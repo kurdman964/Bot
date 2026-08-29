@@ -2,7 +2,7 @@ import os
 import telebot
 from flask import Flask, request
 
-TOKEN = "8817896049:AAF0Gs6DRns47oCkCzqO9UTVlfJeQNea0VU"
+TOKEN = "8865163398:AAHjV3Xzz7p5kuobNgTQ1wupB7i2bko9OBU"
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
@@ -33,10 +33,8 @@ def webhook():
     return "Bot is running!", 200
 
 if __name__ == "__main__":
-    # کارپێکردنی پۆرت بۆ ئەوەی Render ڕازی بێت و کێشەی نەبێت
     port = int(os.environ.get('PORT', 5000))
     
-    # لێرەدا بۆتەکە بە پۆڵینگ لە پاشبنکەدا دەست پێ دەکیم یان وێبهۆک
     import threading
     t = threading.Thread(target=bot.infinity_polling, kwargs={"skip_pending": True})
     t.start()
