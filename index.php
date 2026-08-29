@@ -2,6 +2,11 @@
 
 <?php
 ob_start();
+$update = json_decode(file_get_contents('php://input'));
+if (!$update) {
+    exit;
+}
+
 $MED0001 = "8916246734:AAEkks4zyD4l5qMPIY1TCqVOKgTcTA2c_W0";
 define('API_KEY',$MED0001);
 echo file_get_contents("https://api.telegram.org/bot".API_KEY."/setWebhook?url=https://".$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']);
