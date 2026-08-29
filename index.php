@@ -2,7 +2,7 @@
 
 <?php
 ob_start();
-$MED0001 = "https://api.telegram.org/bot8916246734:AAEks4zyD4l5qMPIY1TCqV0KgTcTa2c_W/setWebhook?url=https://bot-boj8.onrender.com/index.php
+$MED0001 = "8916246734:AAEkks4zyD4l5qMPIY1TCqVOKgTcTA2c_W0
 ";
 define('API_KEY',$MED0001);
 echo file_get_contents("https://api.telegram.org/bot".API_KEY."/setWebhook?url=https://".$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']);
