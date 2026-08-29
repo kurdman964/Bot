@@ -6,11 +6,7 @@ $MED0001 = "8916246734:AAEkks4zyD4l5qMPIY1TCqVOKgTcTA2c_W0
 ";
 define('API_KEY',$MED0001);
 echo file_get_contents("https://api.telegram.org/bot".API_KEY."/setWebhook?url=https://".$_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME']);
-function bot($method,$datas=[]){
-$Cc14Cc = http_build_query($datas);
-$url = "https://api.telegram.org/bot".API_KEY."/".$method."?$Cc14Cc";
-$Cc14Cc = file_get_contents($url);
-return json_decode($Cc14Cc);}
+
 $update = json_decode(file_get_contents('php://input'));
 $message = $update->message;
 $message = $update->message;
